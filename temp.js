@@ -36,3 +36,6 @@
 
 // 3. Object.create()
 // The easiest & most straightforward way of linking an object to a prototype object.
+
+// With constructor functions, we can't use arrow functions because we won't 
+// have access to the this object
