@@ -114,3 +114,31 @@ console.dir(x => x + 1)
 // and bind?
 // Because  Function.prototype.__proto__ === Object.prototype.__proto__ === Object.prototype
 // And Function.prototype has these methods, hence all functions can use them
+
+// CODING CHALLENGE #1
+
+// Car constructor function
+// const Car = function(make, speed) {
+//   this.make = make
+//   this.speed = speed
+// }
+
+// Car.prototype.accelerate = function() {
+//   this.speed += 10
+// }
+
+// Car.prototype.brake = function() {
+//   this.speed -= 5
+// }
+
+// ES6 Classes
+// class PersonCl {
+//   constructor(firstName, birthYear) {
+//     this.firstName = firstName
+//     this.birthYear = birthYear
+//   }
+
+//   calcAge() {
+//     return 2037 - this.birthYear
+//   }
+// }
