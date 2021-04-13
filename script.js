@@ -70,3 +70,47 @@ console.log(gagan.species)
 
 // hasOwnProperty checks whether that's it's own property or it's prototype's property
 console.log(gagan.hasOwnProperty('birthYear'), gagan.hasOwnProperty('firstName'), gagan.hasOwnProperty('species'))
+
+// Person.__proto__ ===> Object.prototype
+
+// Object literal is same as {} === new Object(...)
+// [] === new Array(...)
+
+// gagan.hasOwnProperty gagan object does not have it's own hasOwnProperty function
+// Object.prototype has it and it is inherited through prototype chain.
+
+console.log(Person.prototype.__proto__ === Object.prototype)
+console.log(gagan.__proto__.__proto__ === Object.prototype)
+
+console.log(Person.prototype.constructor === Person)
+console.dir(Person)
+
+const arr = [ -1, 2, 4, 1 ]
+
+console.log(arr.__proto__ === Array.prototype)
+console.log(arr.__proto__.__proto__ === Object.prototype)
+console.log(arr.__proto__.__proto__.__proto__ === null)
+
+
+// Prototype inheritance on built-in objects
+// We can add new functions to array prototype which will be accessible to all 
+// arrays created
+// Don't do this on production(team of developers)
+Array.prototype.unique = function() {
+  return [...new Set(this)]
+}
+
+arr1 = [ 1, 1, 1, 2, 3, 5, 4, 5, 2, 98, 7]
+console.log(arr1.unique())
+
+const h1 = document.querySelector('h1')
+console.dir(h1)
+// Prototype chain
+// h1 --> HTMLHeadingElement --> HTMLElement --> Element --> Node
+// --> EventTaget --> Object --> null
+
+console.dir(x => x + 1)
+// How does a function have access to call a function, like call, apply 
+// and bind?
+// Because  Function.prototype.__proto__ === Object.prototype.__proto__ === Object.prototype
+// And Function.prototype has these methods, hence all functions can use them
