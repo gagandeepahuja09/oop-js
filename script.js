@@ -204,3 +204,17 @@ class PersonCl {
 // PersonCl.hey = function() {
 //   console.log(`Hey there 👋🏻`)
 // }
+
+// Constructor function => Automatically sets the __proto__ property of all instances when using new
+// Object.create => The __proto__ is to be set for instances manually by specifying in params
+// the object to be used as the prototype.
+// Least used way
+const PersonProto = {
+  calcAge() {
+    return 2021 - this.birthYear 
+  }
+}
+const raj = Object.create(PersonProto)
+raj.birthYear = 1991
+
+// Object.create is required for implementing class inheritance
