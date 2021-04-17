@@ -160,11 +160,15 @@ class PersonCl {
   get fullName() {
     return this._fullName
   }
+
+  static hey() {
+    console.log(`Hey there 👋🏻`)
+  }
 }
 
 
-const gagan1 = new PersonCl('Gagan', 1998)
-console.log(gagan1.age, gagan1.name = 'Gagandeep', gagan1)
+// const gagan1 = new PersonCl('Gagan', 1998)
+// console.log(gagan1.age, gagan1.name = 'Gagandeep', gagan1)
 
 // Interesting class properties
 // 1. Classes are not hoisted.
@@ -187,3 +191,16 @@ console.log(gagan1.age, gagan1.name = 'Gagandeep', gagan1)
 // console.log(account.latest)
 // account.latest = 20
 // console.log(account.movements, account.latest)
+
+// Static Methods
+// They are not directly tied to an object / instance
+// Not a part of the prototype
+// Rather a property / method of the class itself
+// Eg. Array.from() ==> converts an array like object(eg. NodeList) to array
+// Array.from(document.querySelectorAll('h1'))
+// Eg. Number.parseFloat()
+
+// This is Method 2. Method 1 is using static keyword
+// PersonCl.hey = function() {
+//   console.log(`Hey there 👋🏻`)
+// }
