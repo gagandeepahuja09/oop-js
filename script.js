@@ -132,13 +132,42 @@ console.dir(x => x + 1)
 // }
 
 // ES6 Classes
-// class PersonCl {
-//   constructor(firstName, birthYear) {
-//     this.firstName = firstName
-//     this.birthYear = birthYear
-//   }
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName
+    this.birthYear = birthYear
+  }
 
-//   calcAge() {
-//     return 2037 - this.birthYear
+  get age() {
+    return 2021 - this.birthYear
+  }
+
+  set name(newName) {
+    this.firstName = newName
+  }
+}
+
+const gagan1 = new PersonCl('Gagan', 1998)
+console.log(gagan1.age, gagan1.name = 'Gagandeep', gagan1)
+
+// Interesting class properties
+// 1. Classes are not hoisted.
+// 2. Classes are first-class citizens.
+// 3. Classes are executed in strict mode.
+
+// Getters & Setters
+// const account = {
+//   owner: 'Gagandeep',
+//   movements: [200, 30, 40, 120],
+//   get latest() {
+//     return this.movements.slice(-1).pop()
+//   },
+//   // any setter should always have only 1 parameter 
+//   set latest(mov) {
+//     this.movements.push(mov)
 //   }
 // }
+
+// console.log(account.latest)
+// account.latest = 20
+// console.log(account.movements, account.latest)
