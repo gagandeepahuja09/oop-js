@@ -133,8 +133,8 @@ console.dir(x => x + 1)
 
 // ES6 Classes
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName
+  constructor(fullName, birthYear) {
+    this.fullName = fullName
     this.birthYear = birthYear
   }
 
@@ -142,10 +142,26 @@ class PersonCl {
     return 2021 - this.birthYear
   }
 
-  set name(newName) {
-    this.firstName = newName
+  // Setters can also be used for validation.
+  set fullName(name) {
+    // this would result in infinite loop(call stack limit exceeded) because whenever we try to 
+    // set the fullName, the setter would be called.
+    // this.fullName = name
+    // so we set a different property name, by convention with _ and then create a getter for fullName
+    // and use that _ property
+    if (name.includes(' ')) this._fullName = name
+    else alert(`${name} is not a full name`)
+  }
+
+  get fullName() {
+    return this._fullName
+  }
+
+  get fullName() {
+    return this._fullName
   }
 }
+
 
 const gagan1 = new PersonCl('Gagan', 1998)
 console.log(gagan1.age, gagan1.name = 'Gagandeep', gagan1)
